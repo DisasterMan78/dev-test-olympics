@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif; }
+
+#medal-table {
+  width: 100%;
+  border-spacing: 0; }
+  #medal-table tr {
+    width: 100%; }
+    #medal-table tr:nth-of-type(even) {
+      background-color: #f2f2f2; }
+    #medal-table tr:nth-of-type(odd) {
+      background-color: #ffffff; }
+  #medal-table th {
+    width: 20%;
+    text-align: left;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem; }
+    #medal-table th:not(:first-child) {
+      padding-left: 1rem; }
+  #medal-table td {
+    padding: 0.5rem; }
+    #medal-table td:not(:first-child) {
+      padding-left: 1rem; }
+  #medal-table button {
+    float: right; }
+  #medal-table #medal-table__Country {
+    width: 40%; }
+
+.medal-table__data-row {
+  font-size: 1.2rem; }
+
+.ui.selection.dropdown {
+  min-height: 1.5rem; }
+  .ui.selection.dropdown .text {
+    font-size: 1.2rem; }
+
+.medal-inputs {
+  margin-top: 0.5rem; }
+  .medal-inputs .ui.label {
+    margin-right: 0.5rem; }
+  .medal-inputs input {
+    width: 5rem;
+    margin-right: 1rem; }
+  .medal-inputs button {
+    float: right; }
+
+/*# sourceMappingURL=style.css.map*/

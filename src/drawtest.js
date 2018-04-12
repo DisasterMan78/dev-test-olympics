@@ -75,12 +75,12 @@ medalInputContainer.append(countryDropdown.element);
 medalInputRow.classList.add('medal-inputs');
 medalTypes.forEach((medal) => {
     let medalLabel = new utils.DmbElement('label', {
-        classes: ['ui', 'label'],
+        classes: ['large', 'ui', 'label'],
             html: medal,
             for: 'medal-input__' + medal
         }),
         medalInput = new utils.DmbElement('input', {
-            classes: ['ui', 'input'],
+            classes: ['big', 'ui', 'input'],
             attr: {
                 type: 'number',
                 value: 0,

@@ -66,7 +66,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/drawtest.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -229,12 +229,12 @@ medalInputContainer.append(countryDropdown.element);
 medalInputRow.classList.add('medal-inputs');
 medalTypes.forEach(function (medal) {
     var medalLabel = new utils.DmbElement('label', {
-        classes: ['ui', 'label'],
+        classes: ['large', 'ui', 'label'],
         html: medal,
         for: 'medal-input__' + medal
     }),
         medalInput = new utils.DmbElement('input', {
-        classes: ['ui', 'input'],
+        classes: ['big', 'ui', 'input'],
         attr: {
             type: 'number',
             value: 0,
@@ -264,6 +264,17 @@ addCountryButton.element.addEventListener('mouseup', function (event) {
 
     medalsTable.addRow(addMedalsObject);
 });
+
+/***/ }),
+
+/***/ "./src/sass/drawtest.scss":
+/*!********************************!*\
+  !*** ./src/sass/drawtest.scss ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -606,6 +617,19 @@ var MedalsTableManager = function () {
 exports.DmbElement = DmbElement;
 exports.DmbDropdown = DmbDropdown;
 exports.MedalsTableManager = MedalsTableManager;
+
+/***/ }),
+
+/***/ 0:
+/*!********************************************************!*\
+  !*** multi ./src/drawtest.js ./src/sass/drawtest.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./src/drawtest.js */"./src/drawtest.js");
+module.exports = __webpack_require__(/*! ./src/sass/drawtest.scss */"./src/sass/drawtest.scss");
+
 
 /***/ })
 

@@ -1,3 +1,73 @@
+$light-color: #ffffff;
+$dark-color: #f2f2f2;
+
+*{
+    box-sizing: border-box;
+}
+
 body{
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+#medal-table{
+    width: 100%;
+    border-spacing: 0;
+
+    tr{
+        width: 100%;
+        &:nth-of-type(even) { background-color: $dark-color; }
+        &:nth-of-type(odd) { background-color: $light-color; }
+    }
+
+    th{
+        width: 20%;
+        text-align: left;
+        font-size: 1.2rem;
+        padding-bottom: 0.5rem;
+
+        &:not(:first-child){
+            padding-left: 1rem;
+        }
+    }
+    td{
+        padding: 0.5rem;
+        &:not(:first-child){
+            padding-left: 1rem;
+        }
+    }
+    button{
+        float: right;
+    }
+
+    #medal-table__{
+        &Country{
+            width: 40%;
+        }
+    }
+}
+
+.medal-table__data-row{
+    font-size: 1.2rem;
+}
+
+.ui.selection.dropdown{
+    min-height: 1.5rem;
+
+    .text{
+        font-size: 1.2rem;
+    }
+}
+
+.medal-inputs{
+    margin-top: 0.5rem;
+    .ui.label{
+        margin-right: 0.5rem;
+    }
+    input{
+        width: 5rem;
+        margin-right: 1rem;
+    }
+    button{
+        float: right;
+    }
 }

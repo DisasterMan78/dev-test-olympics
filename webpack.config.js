@@ -1,15 +1,14 @@
 const path = require('path'),
       webpack = require('webpack'),
-      ExtractTextPlugin = require("extract-text-webpack-plugin"),
-      extractSass = new ExtractTextPlugin({
-        filename: "[name].[contenthash].css",
-        disable: process.env.NODE_ENV === "development"
-      });
+      ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   target: 'web',
   mode: "development",
-  entry: './src/drawtest.js',
+  entry: [
+    './src/drawtest.js',
+    './src/sass/drawtest.scss'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'drawtest.bundle.js'
@@ -28,20 +27,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: extractSass.extract({
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: "sass-loader"
-          }],
-          // use style-loader in development
-          fallback: "style-loader"
-        })
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
       }
     ]
   },
   plugins: [
-    extractSass
+    new ExtractTextPlugin({
+      filename: 'style.css'
+    })
   ],
   stats: {
     colors: true
