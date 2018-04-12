@@ -1,0 +1,38 @@
+{
+  "name": "draw-tmp",
+  "version": "0.0.1",
+  "description": "draw test preamble",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disasterman78/draw-dev-task-david-b.git"
+  },
+  "author": "disasterman78",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/disasterman78/draw-dev-task-david-b/issues"
+  },
+  "homepage": "https://github.com/disasterman78/draw-dev-task-david-b#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "country-list": "^1.1.0",
+    "fuzzy-search": "^2.0.1",
+    "semantic-ui": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "gulp": "^3.9.1",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
+}
