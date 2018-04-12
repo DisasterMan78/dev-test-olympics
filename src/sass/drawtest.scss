@@ -41,8 +41,13 @@ body{
 
     #medal-table__{
         &Country{
-            width: 40%;
+            width: 35%;
         }
+    }
+
+    #medal-table__delete{
+        width: 5%;
+        text-align: center;
     }
 }
 
@@ -53,7 +58,10 @@ body{
 .ui.selection.dropdown{
     min-height: 1.5rem;
 
-    .text{
+    .text,
+    .item,
+    .search,
+    .message{
         font-size: 1.2rem;
     }
 }

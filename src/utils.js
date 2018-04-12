@@ -154,6 +154,14 @@ class MedalsTableManager {
             this.addSorter(thisColumn);
             trth.append(thisColumn.element);
         }));
+        let deleteColumn = new DmbElement('th', {
+                id: 'medal-table__delete'
+            }),
+            deleteIcon = new DmbElement('i', {
+                classes: ['icon', 'trash']
+            });
+        deleteColumn.append(deleteIcon.element);
+        trth.append(deleteColumn.element);
         this.table.append(trth.element);
     }
 
@@ -287,9 +295,43 @@ class MedalsTableManager {
                     thisColumn.prepend(flag.element);
                 }
                 trtd.append(thisColumn.element);
-                this.table.append(trtd.element);
             }));
+
+            let deleteColumn = new DmbElement('th', {
+                    id: 'medal-table__delete'
+                }),
+                deleteButton = new DmbElement('button', {
+                    classes: ['ui', 'icon', 'button'],
+                    attr: {
+                        'data-country-code': row.countryCode
+                    }
+                }),
+                deleteIcon = new DmbElement('i', {
+                    classes: ['icon', 'trash'],
+                    attr: {
+                        'data-country-code': row.countryCode
+                    }
+                });
+            deleteButton.append(deleteIcon.element);
+            deleteColumn.append(deleteButton.element);
+            trtd.append(deleteColumn.element);
+            this.table.append(trtd.element);
+
+            deleteButton.element.addEventListener('mouseup', (event) => {
+                this.deleteRow(event.target.dataset.countryCode);
+                
+            })
         })
+    }
+
+    deleteRow(countryCode) {
+        for (var i = 0; i < this.data.length; i++) {
+            if (this.data[i]['countryCode'] === countryCode) {
+                this.data.splice(i, 1);
+                break;
+            }
+        }
+        this.sortData();
     }
 }
 

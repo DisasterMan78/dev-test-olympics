@@ -464,6 +464,14 @@ var MedalsTableManager = function () {
             _this2.addSorter(thisColumn);
             trth.append(thisColumn.element);
         });
+        var deleteColumn = new DmbElement('th', {
+            id: 'medal-table__delete'
+        }),
+            deleteIcon = new DmbElement('i', {
+            classes: ['icon', 'trash']
+        });
+        deleteColumn.append(deleteIcon.element);
+        trth.append(deleteColumn.element);
         this.table.append(trth.element);
     }
 
@@ -605,9 +613,43 @@ var MedalsTableManager = function () {
                         thisColumn.prepend(flag.element);
                     }
                     trtd.append(thisColumn.element);
-                    _this5.table.append(trtd.element);
+                });
+
+                var deleteColumn = new DmbElement('th', {
+                    id: 'medal-table__delete'
+                }),
+                    deleteButton = new DmbElement('button', {
+                    classes: ['ui', 'icon', 'button'],
+                    attr: {
+                        'data-country-code': row.countryCode
+                    }
+                }),
+                    deleteIcon = new DmbElement('i', {
+                    classes: ['icon', 'trash'],
+                    attr: {
+                        'data-country-code': row.countryCode
+                    }
+                });
+                deleteButton.append(deleteIcon.element);
+                deleteColumn.append(deleteButton.element);
+                trtd.append(deleteColumn.element);
+                _this5.table.append(trtd.element);
+
+                deleteButton.element.addEventListener('mouseup', function (event) {
+                    _this5.deleteRow(event.target.dataset.countryCode);
                 });
             });
+        }
+    }, {
+        key: 'deleteRow',
+        value: function deleteRow(countryCode) {
+            for (var i = 0; i < this.data.length; i++) {
+                if (this.data[i]['countryCode'] === countryCode) {
+                    this.data.splice(i, 1);
+                    break;
+                }
+            }
+            this.sortData();
         }
     }]);
 

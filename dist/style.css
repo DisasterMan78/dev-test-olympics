@@ -27,14 +27,20 @@ body {
   #medal-table button {
     float: right; }
   #medal-table #medal-table__Country {
-    width: 40%; }
+    width: 35%; }
+  #medal-table #medal-table__delete {
+    width: 5%;
+    text-align: center; }
 
 .medal-table__data-row {
   font-size: 1.2rem; }
 
 .ui.selection.dropdown {
   min-height: 1.5rem; }
-  .ui.selection.dropdown .text {
+  .ui.selection.dropdown .text,
+  .ui.selection.dropdown .item,
+  .ui.selection.dropdown .search,
+  .ui.selection.dropdown .message {
     font-size: 1.2rem; }
 
 .medal-inputs {
